@@ -143,6 +143,8 @@
 		<p>Getting different premiums for each side or getting different premiums each day will completely screw up the estimates. You may have losing days when you get higher premiums then winning days when you get lower premiums. Minor differences should be ok.</p>
 		<br />
 		<p>Use <a href="https://spreads.credit/" target="_blank">spreads.credit</a> to get find in real time the credit spreads that give you the premium you're targeting.</p>
+		<br />
+		<p>Source code for this application: <a href="https://github.com/weaseldotro/0DTEProfitCalculator" target="_blank">https://github.com/weaseldotro/0DTEProfitCalculator</a></p>
 	</div>
 {/if}
 
