@@ -110,8 +110,8 @@
 				<DataTable
 					size="short"
 					headers={[
-						{ key: 'wins', value: 'Wins' },
-						{ key: 'losses', value: 'Losses' },
+						{ key: 'wins', value: 'No. of win days' },
+						{ key: 'losses', value: 'No. of lose days' },
 						{ key: 'pl', value: 'P/L ($)' },
 						{ key: 'plPercentage', value: 'P/L (% of buying power)' },
 					]}
