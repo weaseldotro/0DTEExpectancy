@@ -61,7 +61,7 @@
 	<Grid padding fullWidth noGutter>
 		<Row>
 			<Column sm={4} md={4} lg={4} xlg={2}>
-				<NumberInput step={1000} label="Buying power" bind:value={$settings.buyingPower} />
+				<NumberInput invalid={$settings.buyingPower < 1000} invalidText="must be higher at least 1000" min={1000} step={1000} label="Buying power" bind:value={$settings.buyingPower} />
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
@@ -69,11 +69,11 @@
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
-				<TextInput labelText="Stop loss %, incl. slippage" bind:value={$settings.stopLoss} />
+				<NumberInput invalid={$settings.stopLoss < 201} invalidText="must be higher at least 201%"  min={201} step={10} label="Stop loss %, incl. slippage" bind:value={$settings.stopLoss} />
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
-				<NumberInput step={1} min={1} max={252} label="Days" bind:value={$settings.days} />
+				<NumberInput invalid={$settings.days < 2} invalidText="must be at least 2" step={1} min={2} max={252} label="Days" bind:value={$settings.days} />
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
@@ -86,7 +86,7 @@
 		<Row>
 			<Column sm={4} md={4} lg={4} xlg={4}>
 				<strong>Daily net premium:</strong>
-				${roundNumberToString(netPremiumPerDay)}
+				${roundNumberToString(netPremiumPerDay)} (${roundNumberToString(netPremiumPerDay/2)} per side)
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={4}>
