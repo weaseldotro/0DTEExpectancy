@@ -100,7 +100,7 @@
 
 		<Row>
 			<Column sm={4} md={4} lg={4} xlg={4}>
-				<strong>Daily net premium:</strong>
+				<strong>Daily net credit received:</strong>
 				${roundNumberToString(netPremiumPerDay)} (${roundNumberToString(netPremiumPerDay / 2)} per side)
 			</Column>
 
