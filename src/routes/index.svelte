@@ -4,6 +4,7 @@
 	import { settings } from '$lib/settings'
 	import { onMount } from 'svelte'
 	import { roundNumberToString } from '$lib/helpers'
+	import type { DataTableRow } from 'carbon-components-svelte/types/DataTable/DataTable.svelte'
 
 	interface Estimate {
 		id: string
@@ -19,15 +20,29 @@
 	let potentialDailyROI: number
 	let winsForBreakeven: number
 	let estimates: Estimate[] = []
+	let selectedRowIDs: string[] = []
 
 	onMount(async () => {
 		loadSettings()
+		if ($settings.highlight) {
+			selectedRowIDs = [$settings.highlight]
+		}
 		mounted = true
 	})
 
 	const reset = () => {
 		for (const [k, v] of Object.entries(defaultSettings)) {
 			$settings[k] = v
+		}
+	}
+
+	const clickRow = (e: CustomEvent<DataTableRow>) => {
+		if ($settings.highlight == e.detail.id) {
+			$settings.highlight = null
+			selectedRowIDs = []
+		} else {
+			$settings.highlight = e.detail.id
+			selectedRowIDs = [e.detail.id]
 		}
 	}
 
@@ -69,7 +84,7 @@
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
-				<NumberInput invalid={$settings.stopLoss < 201} invalidText="must be higher at least 201%"  min={201} step={10} label="Stop loss %, incl. slippage" bind:value={$settings.stopLoss} />
+				<NumberInput invalid={$settings.stopLoss < 201} invalidText="must be higher at least 201%" min={201} step={10} label="Stop loss %, incl. slippage" bind:value={$settings.stopLoss} />
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
@@ -86,7 +101,7 @@
 		<Row>
 			<Column sm={4} md={4} lg={4} xlg={4}>
 				<strong>Daily net premium:</strong>
-				${roundNumberToString(netPremiumPerDay)} (${roundNumberToString(netPremiumPerDay/2)} per side)
+				${roundNumberToString(netPremiumPerDay)} (${roundNumberToString(netPremiumPerDay / 2)} per side)
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={4}>
@@ -108,6 +123,8 @@
 		<Row>
 			<Column sm={8} md={6} lg={8} xlg={8}>
 				<DataTable
+					selectedRowIds={selectedRowIDs}
+					on:click:row={clickRow}
 					size="short"
 					headers={[
 						{ key: 'wins', value: 'No. of win days' },

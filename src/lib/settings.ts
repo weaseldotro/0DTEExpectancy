@@ -5,6 +5,7 @@ interface Settings {
 	maxDailyDrawdown: number
 	stopLoss: number
 	days: number
+	highlight: string | null
 }
 
 export const defaultSettings: Settings = {
@@ -12,6 +13,7 @@ export const defaultSettings: Settings = {
 	maxDailyDrawdown: 2,
 	stopLoss: 320,
 	days: 22,
+	highlight: null
 }
 
 export const settings = writable<Settings>()
@@ -39,7 +41,7 @@ export const loadSettings = () => {
 
 		if (urlParams.get(key)) {
 			loadedSettings[key] = urlParams.get(key)
-			if(typeof defaultSettings[key] == 'number') {
+			if (typeof defaultSettings[key] == 'number') {
 				loadedSettings[key] = parseFloat(loadedSettings[key])
 			}
 		}
@@ -50,7 +52,9 @@ export const loadSettings = () => {
 	settings.subscribe((values: Settings) => {
 		let params = new URLSearchParams()
 		for (const [k, v] of Object.entries(values)) {
-			params.append(k, v)
+			if (v) {
+				params.append(k, v)
+			}
 		}
 
 		let newURL = window.location.href
