@@ -153,13 +153,14 @@
 	<div class="notes">
 		<h2>Assumptions</h2>
 
-		<p>You enter both sides.</p>
-		<p>Only one side reaches the stop loss.</p>
-		<p>You use the same buying power every day and you get the same credit for each side (${roundNumberToString(netPremiumPerDay / 2)} per side).</p>
+		<p>The calculations above are accurate if the following rules are followed:</p>
+		<p>- You enter both sides.</p>
+		<p>- Only one side reaches the stop loss. Being stopped on both sides is quite rare (but does ocassionaly happen).</p>
+		<p>- You use the same buying power every day and you get the receive the same net credit for each side (${roundNumberToString(netPremiumPerDay / 2)} per side).</p>
 		<br />
-		<p>Getting different premiums for each side or getting different premiums each day will completely screw up the estimates. You may have losing days when you get higher premiums then winning days when you get lower premiums. Minor differences should be ok.</p>
+		<p>Receving a different credit for each side or receiving a different credit each day will completely screw up the estimates. You may have losing days when you receive a greater credit then have winning days when you receive lower credit. Minor differences should be ok.</p>
 		<br />
-		<p>Use <a href="https://spreads.credit/" target="_blank">spreads.credit</a> to get find in real time the credit spreads that give you the premium you're targeting.</p>
+		<p>Use <a href="https://spreads.credit/" target="_blank">spreads.credit</a> to get find in real time the credit spreads that give you the net credit you're targeting.</p>
 		<br />
 		<p>Source code for this application: <a href="https://github.com/weaseldotro/0DTEProfitCalculator" target="_blank">https://github.com/weaseldotro/0DTEProfitCalculator</a></p>
 	</div>
