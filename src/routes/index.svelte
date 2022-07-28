@@ -157,7 +157,7 @@
 		<p>- You enter both sides.</p>
 		<p>- You use the same buying power.</p>
 		<p>- You the receive the same net credit for each side (${roundNumberToString(netPremiumPerDay / 2)} per side).</p>
-		<p>- Only one side reaches the stop loss. Being stopped on both sides is quite rare (but does ocassionaly happen).</p>
+		<p>- Only one side reaches the stop loss. Being stopped on both sides is quite rare, but does ocassionaly happen. The chances of being stopped on both sides decrease with a bigger stop loss %. Having a stop loss of 250% means there's a bigger chance of a double stop than having a stop loss of 350%.</p>
 		<br />
 		<p>Receving a different credit for each side or receiving a different credit each day will completely screw up the estimates. You may have losing days when you receive a greater credit, then have winning days when you receive lower credit. Minor differences should be ok.</p>
 		<br />
