@@ -84,7 +84,7 @@
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
-				<NumberInput invalid={$settings.stopLoss < 201} invalidText="must be higher at least 201%" min={201} step={10} label="Stop loss % per side, incl. slippage" bind:value={$settings.stopLoss} />
+				<NumberInput invalid={$settings.stopLoss < 201} invalidText="must be at least 201%" min={201} step={10} label="Stop loss % per side, incl. slippage" bind:value={$settings.stopLoss} />
 			</Column>
 
 			<Column sm={4} md={4} lg={4} xlg={2}>
