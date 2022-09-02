@@ -4,7 +4,7 @@
 </script>
 
 <Content>
-	<h1>0 DTE Profit Calculator</h1>
+	<h1>0 DTE Expectancy</h1>
 
 	<slot />
 </Content>

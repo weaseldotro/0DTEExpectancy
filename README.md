@@ -1,5 +1,5 @@
-# 0 DTE Profit Calculator
+# 0 DTE Expectancy
 
 This app calculates the estimated profit / loss values for the 0 DTE SPX selling IC strategy.
 
-https://0dteprofitcalculator.spreads.credit/
+https://expectancy.0dtespx.com/
