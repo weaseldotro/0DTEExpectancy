@@ -163,7 +163,7 @@
 		<br />
 		<p>Use <a href="https://spreads.credit/" target="_blank">spreads.credit</a> to get find in real time the credit spreads that give you the net credit you're targeting.</p>
 		<br />
-		<p>Source code for this application: <a href="https://github.com/weaseldotro/0DTEProfitCalculator" target="_blank">https://github.com/weaseldotro/0DTEProfitCalculator</a></p>
+		<p>Source code for this application: <a href="https://github.com/weaseldotro/0DTEExpectancy" target="_blank">https://github.com/weaseldotro/0DTEExpectancy</a></p>
 	</div>
 {/if}
 
